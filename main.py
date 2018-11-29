@@ -1,8 +1,11 @@
-import customerCreation
+from dataSetup import dataSetup, restaurantDictionary, customerDictionary, accountDictionary
+from orderManager import orderManagementSystem
 
 def main():
-    customerDictionary = customerCreation.createCustomer()
-    for i in customerDictionary:
-        print(customerDictionary[i].getCustomer())
+    isDataSetup = dataSetup()
+    if isDataSetup:
+       orderManagementSystem(restaurantDictionary, customerDictionary, accountDictionary)
 
+    else:
+        print("An error has occured, please contact support")
 main()

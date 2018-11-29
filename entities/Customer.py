@@ -20,6 +20,8 @@ class Customer:
             self.order = []
         self.order.append(order)
 
-    def getCustomer(self):
-        return "Customer {} {} lives at {}  and the account is {}". \
-            format((self.firstName),(self.lastName),(self.address.getAddress()),(self.account.getAccountName()))
+    def getFirstName(self):
+        return self.firstName
+
+    def getLastName(self):
+        return self.lastName

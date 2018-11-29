@@ -1,0 +1,21 @@
+menu_id,rest_id,item_name,item_price
+1,1,Australian Meat Pie ,5.5
+2,1,Gazpacho ,4.75
+3,1,Chicken Noodle Soup ,6.25
+4,1,Mac and Cheese ,3.5
+5,1,Egg Fried Rice ,2.75
+6,2,Pumpkin Soup ,1.75
+7,2,Gyros ,6
+8,2,Schnitzel ,7
+9,2,Scallops ,10
+10,3,Quesadilla ,8.99
+11,3,Spaghetti Bolognese ,8.99
+12,3,Barbecue ,2.5
+13,3,French Toast ,3.75
+14,4,Eggs Benedict ,5.99
+15,4,Macaroni Salad ,3.99
+16,4,Bratkartoffeln ,2.99
+17,4,Tacos ,6.75
+18,5,Steak Pie ,9.99
+19,5,Chicken Wings ,11
+20,5,Chicken Tikka Masala ,6.5

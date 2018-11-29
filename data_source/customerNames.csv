@@ -1,10 +1,10 @@
-Cust_ID,First_Name,Last_Name
-1,Ryan,Petchenick
+cust_id,first_name,last_name
+1,Ryan ,Petchenick
 2,Bob,Smith
 3,Jim,Nance
 4,Kurt,Warner
-5,Larry,Fitzgeral
-6,Dude ,McBro
+5,Larry,Fitzgerald
+6,Dude,Mcbro
 7,Jon,Cousins
 8,Rob,Halford
 9,Phil,Rivers
