@@ -1,7 +1,7 @@
 def setContext(acctDict, customerDict):
     userContext = None
     userAuthenticated = False
-    displayAcct(acctDict)
+
 
     userName = input("Please enter a user name: ").strip()
     password = input("Please enter a password: ").strip()
@@ -18,9 +18,6 @@ def setContext(acctDict, customerDict):
     return userContext
 
 
-def displayAcct(acctDict):
-    for i in acctDict:
-        print(acctDict[i].getAccountName())
 
 def authenticateUser(userName, password, acctDict):
     authenticated = False

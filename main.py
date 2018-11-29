@@ -1,10 +1,14 @@
-from dataSetup import dataSetup, restaurantDictionary, customerDictionary, accountDictionary
+from dataSetup import dataSetup
 from orderManager import orderManagementSystem
 
 def main():
-    isDataSetup = dataSetup()
-    if isDataSetup:
-       orderManagementSystem(restaurantDictionary, customerDictionary, accountDictionary)
+    applicationData = dataSetup()
+    if applicationData != None:
+        restarauntDictionary = applicationData[2]
+        customerDictionary = applicationData[0]
+        accountDictionary = applicationData[1]
+
+        orderManagementSystem( restarauntDictionary, customerDictionary, accountDictionary)
 
     else:
         print("An error has occured, please contact support")

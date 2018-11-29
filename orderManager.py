@@ -3,13 +3,13 @@ from optionHelper import optionHelper
 
 def orderManagementSystem(restaurantDict, customerDict, accountDict):
 
-    print("Welcome to Order Manager 3000! Please select from the following accounts: ")
+    print("Welcome to Order Manager 3000!")
 
     userContext = setContext(accountDict, customerDict)
 
     if userContext != None:
-        print("Welcome {} {}".format((userContext.getFirstName()), (userContext.getLastName())))
-        optionHelper()
+        print("\nWelcome {} {}\n".format((userContext.getFirstName()), (userContext.getLastName())))
+        optionHelper(userContext, restaurantDict)
     else:
         exit("Shutting down")
 

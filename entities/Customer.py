@@ -25,3 +25,7 @@ class Customer:
 
     def getLastName(self):
         return self.lastName
+
+    def getAccountDetails(self):
+        return "{} {} at address {} {} {} ".format((self.firstName),(self.lastName), \
+                                                  (self.address.street), (self.address.city), (self.address.state) )

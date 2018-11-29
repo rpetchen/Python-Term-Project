@@ -1,12 +1,13 @@
 from OptionConstants import ORDER_FOOD, VIEW_ACCOUNT, VIEW_ORDER, optionsDictionary
 
 
-def optionHelper():
+def optionHelper(userContext, restaurantDict):
+    userContext = userContext
     loggedIn = True
     while loggedIn:
         displayOptions()
         try:
-            option = int(input("Please select from one of the numeric options above, or enter 0 to log out: "))
+            option = int(input("\nPlease select from one of the numeric options above, or enter 0 to log out: \n"))
 
             if option == 0:
                 loggedIn = False
@@ -15,7 +16,10 @@ def optionHelper():
 
             elif optionsDictionary[option] in optionFunctions:
                 optionFunction = optionFunctions[optionsDictionary[option]]
-                optionFunction()
+                if optionsDictionary[option] == VIEW_ORDER or optionsDictionary[option] == VIEW_ACCOUNT:
+                    optionFunction(userContext)
+                elif optionsDictionary[option] == ORDER_FOOD:
+                    optionFunctions(userContext, restaurantDict)
             else:
                 print("Option not found")
         except Exception as e:
@@ -33,11 +37,15 @@ def executeOption(option):
 def orderFood():
     print("Order Food")
 
-def viewOrderHistory():
-    print("View Order History")
+def viewOrderHistory(userContext):
+    print(userContext.getAccountDetails())
 
-def viewAccountDetails():
-    print("view Account Details")
+def viewAccountDetails(userContext):
+    print("\nYour details are below: ")
+    print("-------------------------------------------")
+    print(userContext.getAccountDetails())
+    print("""-------------------------------------------
+Returning to options\n""")
 
 
 optionFunctions = {

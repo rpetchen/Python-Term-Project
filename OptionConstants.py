@@ -1,6 +1,6 @@
 ORDER_FOOD = "Order Food"
 VIEW_ORDER = "View Order History"
-VIEW_ACCOUNT = "VIew Account Details"
+VIEW_ACCOUNT = "View Account Details"
 
 optionsDictionary = {
 
