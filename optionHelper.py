@@ -1,8 +1,14 @@
 from OptionConstants import ORDER_FOOD, VIEW_ACCOUNT, VIEW_ORDER, optionsDictionary
+from functionManager import orderFood, viewAccountDetails, viewOrderHistory
 
+optionFunctions = {
+     ORDER_FOOD: orderFood,
+     VIEW_ORDER: viewOrderHistory,
+     VIEW_ACCOUNT: viewAccountDetails
+}
 
-def optionHelper(userContext, restaurantDict):
-    userContext = userContext
+def optionHelper(customer, restaurantDict):
+    customer = customer
     loggedIn = True
     while loggedIn:
         displayOptions()
@@ -17,9 +23,9 @@ def optionHelper(userContext, restaurantDict):
             elif optionsDictionary[option] in optionFunctions:
                 optionFunction = optionFunctions[optionsDictionary[option]]
                 if optionsDictionary[option] == VIEW_ORDER or optionsDictionary[option] == VIEW_ACCOUNT:
-                    optionFunction(userContext)
+                    optionFunction(customer)
                 elif optionsDictionary[option] == ORDER_FOOD:
-                    optionFunctions(userContext, restaurantDict)
+                    optionFunction(customer, restaurantDict)
             else:
                 print("Option not found")
         except Exception as e:
@@ -31,25 +37,4 @@ def displayOptions():
         print (i, " ", optionsDictionary[i])
 
 
-def executeOption(option):
-    option()
 
-def orderFood():
-    print("Order Food")
-
-def viewOrderHistory(userContext):
-    print(userContext.getAccountDetails())
-
-def viewAccountDetails(userContext):
-    print("\nYour details are below: ")
-    print("-------------------------------------------")
-    print(userContext.getAccountDetails())
-    print("""-------------------------------------------
-Returning to options\n""")
-
-
-optionFunctions = {
-     ORDER_FOOD: orderFood,
-     VIEW_ORDER: viewOrderHistory,
-     VIEW_ACCOUNT: viewAccountDetails
-}

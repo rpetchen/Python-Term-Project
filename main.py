@@ -1,5 +1,5 @@
 from dataSetup import dataSetup
-from orderManager import orderManagementSystem
+from systemManager import systemManager
 
 def main():
     applicationData = dataSetup()
@@ -8,7 +8,7 @@ def main():
         customerDictionary = applicationData[0]
         accountDictionary = applicationData[1]
 
-        orderManagementSystem( restarauntDictionary, customerDictionary, accountDictionary)
+        systemManager(restarauntDictionary, customerDictionary, accountDictionary)
 
     else:
         print("An error has occured, please contact support")

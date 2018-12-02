@@ -15,7 +15,7 @@ def createRestaurantFromCSV():
     restaurantDictionary = {}
     isDataValid = True
 
-    f = open(r'C:\Users\Ryan\PycharmProjects\PythonTermProject\data_source\restaurantNames.csv')
+    f = open('data_source/restaurantNames.csv')
     csv_f = csv.DictReader(f)
 
     for row in csv_f:
@@ -38,7 +38,7 @@ def createRestaurantFromCSV():
 def createRestaurantMenuFromCSV(restuarantDictionary):
     isDataValid = True
 
-    f = open(r'C:\Users\Ryan\PycharmProjects\PythonTermProject\data_source\menuItems.csv')
+    f = open('data_source/menuItems.csv')
     csv_f = csv.DictReader(f)
 
     for row in csv_f:
@@ -55,4 +55,3 @@ def createRestaurantMenuFromCSV(restuarantDictionary):
             break
 
 
-restaurantSetup()

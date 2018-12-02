@@ -12,6 +12,9 @@ class Restaurant:
     def addMenuItem(self, menuItem):
         self.menu[menuItem.getMenuItemId()] = menuItem
 
+    def getRestaurantName(self):
+        return self.restaurantName
+
     def getMenu(self):
         if len(self.menu) > 0:
             return self.menu

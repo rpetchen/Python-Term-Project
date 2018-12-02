@@ -1,6 +1,9 @@
+from utilities.customerOrderFileWriter import customerOrderFileWriter
+
 class Customer:
     def __init__(self, cust_id):
         self.cust_id = cust_id
+        self.orders = []
 
     def setName(self, firstName, lastName):
         self.firstName = firstName
@@ -16,9 +19,12 @@ class Customer:
         self.account  = account
 
     def addOrder(self, order):
-        if len(self.order < 1):
-            self.order = []
-        self.order.append(order)
+        self.orders.append(order)
+        customerOrderFileWriter(order)
+
+    def getOrders(self):
+       return self.orders
+
 
     def getFirstName(self):
         return self.firstName
