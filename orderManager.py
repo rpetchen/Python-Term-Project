@@ -1,7 +1,10 @@
 from entities.Order import Order
+from utilities.customerOrderFileWriter import customerOrderFileWriter
 
 def orderManager(customer, restaurantDict):
+
     restaurant = selectRestaurant(restaurantDict)
+
     menuOrderItems = orderMenuItems(restaurant)
     if menuOrderItems:
         order = Order()
@@ -9,11 +12,11 @@ def orderManager(customer, restaurantDict):
         order.setCustomerId(customer.getID())
         orderPrice = 0.0
         for menuItem in menuOrderItems:
-            order.setMenuItem(menuItem.getItemName())
-            itemPrice = float(menuItem.getItemPrice())
-            orderPrice += itemPrice
+            order.setMenuItem(menuItem)
+            orderPrice += float(menuItem.getItemPrice())
         order.setPrice(orderPrice)
     customer.addOrder(order)
+    customerOrderFileWriter(order)
 
 
 def selectRestaurant(restaurantDict):

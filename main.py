@@ -3,6 +3,7 @@ from systemManager import systemManager
 
 def main():
     applicationData = dataSetup()
+
     if applicationData != None:
         restarauntDictionary = applicationData[2]
         customerDictionary = applicationData[0]

@@ -8,8 +8,14 @@ def viewOrderHistory(userContext):
     print("\nYour details are below: ")
     print("-------------------------------------------")
     if len(userOrders) > 0:
-        for i in userOrders:
-            print(i)
+        for order in userOrders:
+            listItems = [i.getItemName() for i in order.getMenuItems()]
+            print("\nYou ordered from the following restaurant: {}".format(order.getRestaurantName()))
+            print("The following items were ordered: ", end="")
+            for i in listItems:
+                print (i, end = ",")
+            print("\nYour total for this order was ${}".format(order.getPrice()))
+            print("\n")
     else:
         print("User has no previous orders!")
     print("""-------------------------------------------

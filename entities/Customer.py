@@ -20,7 +20,6 @@ class Customer:
 
     def addOrder(self, order):
         self.orders.append(order)
-        customerOrderFileWriter(order)
 
     def getOrders(self):
        return self.orders

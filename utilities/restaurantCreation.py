@@ -1,13 +1,12 @@
 import csv
 from entities.MenuItem import MenuItem
-from entities.Address import Address
 from entities.Restaurant import Restaurant
 
 
 def restaurantSetup():
     restuarantDictionary = createRestaurantFromCSV()
-    createRestaurantMenuFromCSV(restuarantDictionary)
-    return restuarantDictionary
+    menuDictionary = createRestaurantMenuFromCSV(restuarantDictionary)
+    return [restuarantDictionary, menuDictionary]
 
 
 def createRestaurantFromCSV():
@@ -37,7 +36,7 @@ def createRestaurantFromCSV():
 
 def createRestaurantMenuFromCSV(restuarantDictionary):
     isDataValid = True
-
+    menuDictionary = {}
     f = open('data_source/menuItems.csv')
     csv_f = csv.DictReader(f)
 
@@ -48,10 +47,11 @@ def createRestaurantMenuFromCSV(restuarantDictionary):
             item_name = row['item_name']
             item_price = row['item_price']
             newMenuItem = MenuItem(menuId, item_name, item_price)
+            menuDictionary[menuId] = newMenuItem
             restuarantDictionary[rest_id].addMenuItem(newMenuItem)
         except Exception as e:
             print(e)
             raise RuntimeError("Menu Error - {} is a required field when creating restaurants".format(e.__str__()))
             break
 
-
+    return menuDictionary
